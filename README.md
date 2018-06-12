@@ -14,6 +14,7 @@ remotes::install_github('yonicd/noplyr')
   - filter
   - mutate
   - arrange
+  - group_by
 
 ## tidyr
 
