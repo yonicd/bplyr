@@ -42,8 +42,6 @@ select.default <- function(.data,...){
 #' @export
 select.split_df <- function(.data,...){
 
-  split_df <- split(strip_class(.data),splitter(.data))
-
-  rbind_fn(split_df, select, .data, ...)
+  bindr(split(.data), select, .data, ...)
 
 }

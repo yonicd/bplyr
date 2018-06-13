@@ -31,28 +31,30 @@ find_idx <- function(data, obj = NULL, regex = FALSE,...){
 
 }
 
-rbind_fn <- function(split_df, fn, .data, ...){
+bindr <- function(split_df, fn, .data, ...){
+
+  split_df <- split_df[sapply(split_df,function(x) nrow(x)>0)]
 
   ret <- lapply(split_df,fn,...)
 
-  ret <- do.call('rbind',ret)
+  ret_rbind <- do.call('rbind',ret)
 
-  row.names(ret) <- NULL
+  #ret_groups <- as.data.frame(do.call(rbind,strsplit(rownames(ret_rbind),'[.]')),stringsAsFactors = FALSE)
 
-  regroup(ret,.data)
+  groups <- unique(splitter(.data))
+
+  #names(ret_groups) <- names(groups)
+
+  #ret_groups <- sapply(ret_groups,utils::type.convert)
+
+  ret_cbind <- cbind(groups,ret_rbind)
+
+  row.names(ret_cbind) <- NULL
+
+  regroup(ret_cbind,.data)
 }
 
 strip_class <- function(data){
   class(data) <- class(data)[-1]
   data
-}
-
-#' @importFrom rlang quo_expr
-splitter <- function(.data){
-
-  subset(strip_class(.data),
-         select = unlist(lapply(
-           attr(.data,'splitby'),
-           function(x){eval(rlang::quo_expr(x))})
-         ))
 }

@@ -30,8 +30,6 @@ filter.default <- function(.data,...){
 #' @export
 filter.split_df <- function(.data,...){
 
-  split_df <- split(strip_class(.data),splitter(.data))
-
-  rbind_fn(split_df, filter, .data, ...)
+  bindr(split(.data), filter, .data, ...)
 
 }

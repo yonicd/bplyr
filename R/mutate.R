@@ -40,8 +40,6 @@ mutate.default <- function(.data,...){
 #' @export
 mutate.split_df <- function(.data,...){
 
-  split_df <- split(strip_class(.data),splitter(.data))
-
-  rbind_fn(split_df, mutate, .data, ...)
+  bindr(split(.data), mutate, .data, ...)
 
 }

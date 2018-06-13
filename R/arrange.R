@@ -32,8 +32,6 @@ arrange.default <- function(.data,...){
 #' @export
 arrange.split_df <- function(.data,...){
 
-  split_df <- split(strip_class(.data),splitter(.data))
-
-  rbind_fn(split_df, arrange, .data, ...)
+  bindr(split(.data), arrange, .data, ...)
 
 }
