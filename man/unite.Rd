@@ -2,33 +2,26 @@
 % Please edit documentation in R/unite.R
 \name{unite}
 \alias{unite}
-\title{base unite}
+\title{Unite multiple columns into one.}
 \usage{
-unite(data, col, columns = NULL, regex = FALSE, sep = "_",
-  remove = TRUE, ...)
+unite(data, col, ..., sep = "_", remove = TRUE)
 }
 \arguments{
 \item{data}{data.frame}
 
 \item{col}{character, name of the new column}
 
-\item{columns}{column names or indicies or regex of them to gather,
-Default: NULL}
-
-\item{regex}{boolean, indicates of columns is to be treated as a
-regular expression, Default: FALSE}
+\item{\dots}{columns to combine}
 
 \item{sep}{character, separator to use between values, Default: '_'}
 
 \item{remove}{boolean, if TRUE remove input columns from output object, Default: TRUE}
-
-\item{\dots}{parameters to pass to grep}
 }
 \value{
 data.frame
 }
 \description{
-base unite mimics basic functionality of tidyr::unite
+Mimics tidyr::unite using base R and rlang
 }
 \details{
 the main difference between this lite version and the tidyr version is that the
@@ -37,9 +30,15 @@ that is to be united. Since this is mainly aesthetic it was not transfered over.
 }
 \examples{
 
-unite(mtcars, col = "vs_am", columns = c("vs","am"))
+unite(airquality, col = "month_day", columns = c(Month,Day))\%>\%
+head
 
-unite(mtcars, col = "disp_drat", columns = '^d', regex = TRUE)
+unite(airquality, col = "temp_month_day", columns = c(Temp:Day))\%>\%
+head
+
+unite(airquality, col = "month_day", columns = c("Month","Day"))\%>\%
+head
+
 
 }
 \author{
