@@ -4,7 +4,7 @@
 \alias{ungroup}
 \alias{ungroup.default}
 \alias{ungroup.split_df}
-\title{FUNCTION_TITLE}
+\title{Remove grouping from data.frame}
 \usage{
 ungroup(.data)
 
@@ -13,21 +13,11 @@ ungroup(.data)
 \method{ungroup}{split_df}(.data)
 }
 \arguments{
-\item{.data}{PARAM_DESCRIPTION}
+\item{.data}{data.frame}
 }
 \value{
-OUTPUT_DESCRIPTION
+data.frame
 }
 \description{
-FUNCTION_DESCRIPTION
-}
-\details{
-DETAILS
-}
-\examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
-}
+Mimics dplyr::ungroup using base R
 }

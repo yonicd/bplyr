@@ -1,16 +1,10 @@
-#' @title FUNCTION_TITLE
-#' @description FUNCTION_DESCRIPTION
-#' @param .data PARAM_DESCRIPTION
-#' @param ... PARAM_DESCRIPTION
-#' @param add PARAM_DESCRIPTION, Default: FALSE
-#' @return OUTPUT_DESCRIPTION
-#' @details DETAILS
-#' @examples
-#' \dontrun{
-#' if(interactive()){
-#'  #EXAMPLE1
-#'  }
-#' }
+#' @title Group by one or more variables
+#' @description Mimics dplyr::group_by using base R and rlang
+#' @param .data data.frame
+#' @param ... Variables to group by
+#' @param add When add = FALSE, the default, group_by() will override existing groups.
+#'  To add to the existing groups, use add = TRUE., Default: FALSE
+#' @return data.frame
 #' @rdname group_by
 #' @export
 
@@ -36,17 +30,10 @@ regroup <- function(new,old){
 }
 
 
-#' @title FUNCTION_TITLE
-#' @description FUNCTION_DESCRIPTION
-#' @param .data PARAM_DESCRIPTION
-#' @return OUTPUT_DESCRIPTION
-#' @details DETAILS
-#' @examples
-#' \dontrun{
-#' if(interactive()){
-#'  #EXAMPLE1
-#'  }
-#' }
+#' @title Remove grouping from data.frame
+#' @description Mimics dplyr::ungroup using base R
+#' @param .data data.frame
+#' @return data.frame
 #' @rdname ungroup
 #' @export
 

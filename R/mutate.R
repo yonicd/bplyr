@@ -17,16 +17,16 @@
 #' @rdname mutate
 #' @export
 #' @author Jonathan Sidi
-#' @importFrom rlang quos
 mutate <- function(.data,...){
   UseMethod("mutate")
 }
 
 #' @rdname mutate
 #' @export
+#' @importFrom rlang quos quo_expr
 mutate.default <- function(.data,...){
 
-  FNS <- lapply(rlang::quos(...),quo_expr)
+  FNS <- lapply(rlang::quos(...),rlang::quo_expr)
 
   EXPRS <- lapply(names(FNS),function(x){
     sprintf('%s <- %s',x,deparse(FNS[[x]]))

@@ -3,32 +3,23 @@
 \name{group_by}
 \alias{group_by}
 \alias{group_by.data.frame}
-\title{FUNCTION_TITLE}
+\title{Group by one or more variables}
 \usage{
 group_by(.data, ..., add = FALSE)
 
 \method{group_by}{data.frame}(.data, ..., add = FALSE)
 }
 \arguments{
-\item{.data}{PARAM_DESCRIPTION}
+\item{.data}{data.frame}
 
-\item{...}{PARAM_DESCRIPTION}
+\item{...}{Variables to group by}
 
-\item{add}{PARAM_DESCRIPTION, Default: FALSE}
+\item{add}{When add = FALSE, the default, group_by() will override existing groups.
+To add to the existing groups, use add = TRUE., Default: FALSE}
 }
 \value{
-OUTPUT_DESCRIPTION
+data.frame
 }
 \description{
-FUNCTION_DESCRIPTION
-}
-\details{
-DETAILS
-}
-\examples{
-\dontrun{
-if(interactive()){
- #EXAMPLE1
- }
-}
+Mimics dplyr::group_by using base R and rlang
 }

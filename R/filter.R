@@ -13,13 +13,13 @@
 #' @rdname filter
 #' @export
 #' @author Jonathan Sidi
-#' @importFrom rlang quo_expr quo
 filter <- function(.data,...){
   UseMethod("filter")
 }
 
 #' @rdname filter
 #' @export
+#' @importFrom rlang quo_expr quo
 filter.default <- function(.data,...){
   subset(.data,{
     eval(rlang::quo_expr(rlang::quo(...)))

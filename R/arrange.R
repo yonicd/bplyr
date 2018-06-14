@@ -13,16 +13,16 @@
 #' @rdname arrange
 #' @export
 #' @author Jonathan Sidi
-#' @importFrom rlang quos
 arrange <- function(.data,...){
   UseMethod("arrange")
 }
 
 #' @rdname arrange
 #' @export
+#' @importFrom rlang quos quo_expr
 arrange.default <- function(.data,...){
 
-  EXPRS <- lapply(rlang::quos(...),function(x) quo_expr(x))
+  EXPRS <- lapply(rlang::quos(...),function(x) rlang::quo_expr(x))
 
   .data[with(.data,do.call(order,EXPRS)),]
 

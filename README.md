@@ -1,6 +1,6 @@
 # noplyr
 
-Run basic functions of `dplyr` and `tidyr` with only base `R` and `rlang`
+Run basic functions of `dplyr` and `tidyr` with only base `R` and `rlang`, for Non DBI related data manipulations.
 
 ## installation
 
@@ -10,11 +10,13 @@ remotes::install_github('yonicd/noplyr')
 
 ## dplyr
 
-  - select
-  - filter
-  - mutate
   - arrange
+  - count
+  - filter
   - group_by
+  - mutate 
+  - rename
+  - select
   - summarize
 
 ## tidyr
