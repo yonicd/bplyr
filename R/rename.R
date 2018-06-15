@@ -1,9 +1,7 @@
-#' @title Count observations by group
-#' @description Mimics dplyr::count using base R and rlang
-#' @param x data.frame
-#' @param ... variables to group by
-#' @param wt numeric, weights to count by, Default: NULL
-#' @param sort boolean, if TRUE will sort output in descending order of n, default = FALSE
+#' @title rename variables by name
+#' @description Mimics dplyr::rename using base R and rlang
+#' @param .data data.frame
+#' @param ... variables to rename
 #' @return data.frame
 #' @examples
 #' airquality%>%

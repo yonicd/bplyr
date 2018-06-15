@@ -2,24 +2,20 @@
 % Please edit documentation in R/rename.R
 \name{rename}
 \alias{rename}
-\title{Count observations by group}
+\title{rename variables by name}
 \usage{
 rename(.data, ...)
 }
 \arguments{
-\item{...}{variables to group by}
+\item{.data}{data.frame}
 
-\item{x}{data.frame}
-
-\item{wt}{numeric, weights to count by, Default: NULL}
-
-\item{sort}{boolean, if TRUE will sort output in descending order of n, default = FALSE}
+\item{...}{variables to rename}
 }
 \value{
 data.frame
 }
 \description{
-Mimics dplyr::count using base R and rlang
+Mimics dplyr::rename using base R and rlang
 }
 \examples{
 airquality\%>\%
