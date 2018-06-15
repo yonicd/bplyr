@@ -1,5 +1,19 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+library(noplyr)
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
@@ -7,8 +21,7 @@
 
 # noplyr
 
-Run basic functions of `dplyr` and `tidyr` with only base `R` and
-`rlang`.
+Run basic functions of `dplyr` and `tidyr` with only base `R` and `rlang`.
 
 ## When could this package be useful?
 
@@ -18,13 +31,13 @@ Run basic functions of `dplyr` and `tidyr` with only base `R` and
 
 ## Installation
 
-``` r
+```{r, eval=FALSE}
 remotes::install_github('yonicd/noplyr')
 ```
 
-## Current Build
+## Current Build 
 
-``` r
+```{r}
 data.frame(package = c('rlang','dplyr','tidyr'),
            stringsAsFactors = FALSE)%>%
   noplyr::group_by(package)%>%
@@ -32,19 +45,13 @@ data.frame(package = c('rlang','dplyr','tidyr'),
   knitr::kable()
 ```
 
-| package | version |
-| :------ | :------ |
-| dplyr   | 0.7.5   |
-| rlang   | 0.2.1   |
-| tidyr   | 0.8.1   |
-
 ### dplyr (0.7.5)
 
   - arrange
   - count
   - filter
-  - group\_by
-  - mutate
+  - group_by
+  - mutate 
   - rename
   - select
   - summarize
@@ -54,7 +61,7 @@ data.frame(package = c('rlang','dplyr','tidyr'),
   - gather
   - spread
   - unite
-
+  
 ### todo
 
   - do
@@ -64,11 +71,9 @@ data.frame(package = c('rlang','dplyr','tidyr'),
 
 ### Similar Packages
 
-  - [freebase](https://github.com/hrbrmstr/freebase) : A ‘usethis’-esque
-    Package for Base R Versions of ‘tidyverse’ Code
+  - [freebase](https://github.com/hrbrmstr/freebase) : A ‘usethis’-esque Package for Base R Versions of ‘tidyverse’ Code
 
 ### CoC
-
-Please note that this project is released with a [Contributor Code of
-Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree
-to abide by its terms.
+  
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+By participating in this project you agree to abide by its terms.

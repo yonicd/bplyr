@@ -47,7 +47,13 @@ bindr <- function(split_df, fn, .data, ...){
 
   #ret_groups <- sapply(ret_groups,utils::type.convert)
 
-  ret_cbind <- cbind(groups,ret_rbind)
+  add_cols <- setdiff(names(groups),names(ret_rbind))
+
+  if(length(add_cols)>0){
+    ret_cbind <- cbind(groups[add_cols],ret_rbind)
+  }else{
+    ret_cbind <- ret_rbind
+  }
 
   row.names(ret_cbind) <- NULL
 
