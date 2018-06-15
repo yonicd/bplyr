@@ -40,7 +40,7 @@ data.frame(package = c('rlang','dplyr','tidyr'),
 | rlang   | 0.2.1   |
 | tidyr   | 0.8.1   |
 
-### dplyr (0.7.5)
+### dplyr
 
   - arrange
   - count
@@ -51,7 +51,7 @@ data.frame(package = c('rlang','dplyr','tidyr'),
   - select
   - summarize
 
-### tidyr (0.8.1)
+### tidyr
 
   - gather
   - spread

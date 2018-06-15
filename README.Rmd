@@ -46,7 +46,7 @@ data.frame(package = c('rlang','dplyr','tidyr'),
   knitr::kable()
 ```
 
-### dplyr (0.7.5)
+### dplyr
 
   - arrange
   - count
@@ -57,7 +57,7 @@ data.frame(package = c('rlang','dplyr','tidyr'),
   - select
   - summarize
 
-### tidyr (0.8.1)
+### tidyr
 
   - gather
   - spread
