@@ -9,6 +9,8 @@ Maintainer: The package maintainer <yonicd@gmail.com>
 Description: Use basic dplyr and tidyr functionality without
       need to install all the tidyverse dependecies.
 License: MIT + file LICENSE
+URL: https://github.com/yonicd/noplyr
+BugReports: https://github.com/yonicd/noplyr/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
