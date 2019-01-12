@@ -3,16 +3,18 @@
 
 [![Travis-CI Build
 Status](https://travis-ci.org/yonicd/noplyr.svg?branch=master)](https://travis-ci.org/yonicd/noplyr)
+[![Codecov test
+coverage](https://codecov.io/gh/yonicd/noplyr/branch/master/graph/badge.svg)](https://codecov.io/gh/yonicd/noplyr?branch=master)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Covrpage
 Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_01_12-yellowgreen.svg)](http://tinyurl.com/y8wab3dk)
-
-> Disclaimer: this is experimental, use deliberately and with caution.
 
 # noplyr
 
 Run basic functions of `dplyr` and `tidyr` with only base `R` and
 `rlang`.
+
+> Disclaimer: this is experimental, use deliberately and with caution.
 
 ## When could this package be useful?
 
@@ -70,6 +72,9 @@ data.frame(package = c('rlang','dplyr','tidyr'),
 
   - [freebase](https://github.com/hrbrmstr/freebase) : A ‘usethis’-esque
     Package for Base R Versions of ‘tidyverse’ Code
+
+  - [tbltools](https://github.com/mkearney/tbltools): Tools for Working
+    with Tibbles
 
 ### CoC
 
