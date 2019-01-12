@@ -1,5 +1,22 @@
-# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-
-language: R
-sudo: false
+language: r
 cache: packages
+r_github_packages:
+- metrumresearchgroup/covrpage
+- metrumresearchgroup/pkgdown
+os:
+- linux
+after_success:
+- Rscript -e 'covr::codecov()'
+- Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
+- Rscript -e 'pkgdown::build_site()'
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: "$GITHUB_PAT"
+  keep-history: true
+  local-dir: docs
+  on:
+    branch: master
+env:
+  global:
+    secure: QlhU85AEdtgrh0RxxZGPVUlsqg8S+Ew9KDemEBi0r3uGA4jCUkhJByE0TeBwomr7sj/MIWlCMuH4EHdH/wBZNUDBnW4a0QTgy93h6ysQFtitJJA6hXXY+V+0HxcnFNMYR7Cmm7T+knLBW45qxu9u1+YRF3QXLdLTosNSWNxZS/aYL0utAXXIRWoqQ8EXYeX52aCbnJJ3vq0QKdeXmzw0ovzSym1fmbpsuuXWkbiuvI14hKTenucKPPQtFfJ7tiw+lKCRh5fH2EUt8g+CHz3ISrlKqB5yQfTZJt/w5usEsiPm7Ys4OGrSD708ScBbAgaPvTWcGZmXruc5eI7noHXl1Obm+ZbPb6u20TV4rGk1sgCOVqWwQnxQIfX0OWY0m/FLxOH4AY8oW9XNVSRSqSj83qTQwdJS3EcVJAKY/TwZZXF0bPrOzTGn0gcVQIjwpNArEUS3EiFvUN3rJx8IuIDlhqciLDFiEbvBPG2dKVez2guQmQzZytpuGjKdGAf/6WJ1A3MNJ93POsX5GOnx2DbAzre067IyqBjyxkgE6i8i3cmKuE1WbKqUtTB0813U8jBfulcc/fttbiLZwiphIyyY3W4yEKcmjRQBk93NVFHUUaDHDeqEX85gxkzKZjcX2YyZ//VXbtIBr2Tne8JQ5Y+KvYfrV3WUHA4DnYr5GFOI1RQ=

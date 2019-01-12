@@ -4,6 +4,8 @@
 [![Travis-CI Build
 Status](https://travis-ci.org/yonicd/noplyr.svg?branch=master)](https://travis-ci.org/yonicd/noplyr)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Covrpage
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_01_12-yellowgreen.svg)](http://tinyurl.com/y8wab3dk)
 
 > Disclaimer: this is experimental, use deliberately and with caution.
 
@@ -36,8 +38,8 @@ data.frame(package = c('rlang','dplyr','tidyr'),
 
 | package | version |
 | :------ | :------ |
-| dplyr   | 0.7.5   |
-| rlang   | 0.2.1   |
+| dplyr   | 0.7.6   |
+| rlang   | 0.3.0.1 |
 | tidyr   | 0.8.1   |
 
 ### dplyr

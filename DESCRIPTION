@@ -2,18 +2,21 @@ Package: noplyr
 Type: Package
 Title: Use dplyr and tidyr without the dependency overhead
 Version: 0.1.0
-Authors@R: c(
-    person("Jonathan", "Sidi", email = "yonicd@gmail.com", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0002-4222-1819"))
-  )
+Authors@R: c( person("Jonathan", "Sidi", email =
+      "yonicd@gmail.com", role = c("aut", "cre"), comment =
+      c(ORCID = "0000-0002-4222-1819")) )
 Maintainer: The package maintainer <yonicd@gmail.com>
-Description: Use basic dplyr and tidyr functionality without need to install
-  all the tidyverse dependecies.
+Description: Use basic dplyr and tidyr functionality without
+      need to install all the tidyverse dependecies.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1.9000
+RoxygenNote: 6.1.1
 Depends: R (>= 3.2.0)
 Imports: rlang,utils,magrittr
 Suggests: 
-    testthat
+    testthat,
+    knitr,
+    rmarkdown,
+    covr
+VignetteBuilder: knitr
