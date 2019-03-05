@@ -155,15 +155,178 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>airquality</span><span class='kw'>%&gt;%</span>
-  <span class='kw pkg'>noplyr</span><span class='kw ns'>::</span><span class='fu'>b_group_by</span>(<span class='no'>Month</span>)<span class='kw'>%&gt;%</span>
-  <span class='kw pkg'>noplyr</span><span class='kw ns'>::</span><span class='fu'>b_summarize</span>(<span class='kw'>m</span> <span class='kw'>=</span> <span class='fu'>mean</span>(<span class='no'>Temp</span>),<span class='kw'>m1</span> <span class='kw'>=</span> <span class='fu'>max</span>(<span class='no'>Temp</span>))</div><div class='output co'>#&gt; <span class='error'>Error in loadNamespace(name): there is no package called ‘noplyr’</span></div><div class='input'>
+  <span class='kw pkg'>bplyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/bplyr/topics/b_group_by'>b_group_by</a></span>(<span class='no'>Month</span>)<span class='kw'>%&gt;%</span>
+  <span class='kw pkg'>bplyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/bplyr/topics/b_summarize'>b_summarize</a></span>(<span class='kw'>m</span> <span class='kw'>=</span> <span class='fu'>mean</span>(<span class='no'>Temp</span>),<span class='kw'>m1</span> <span class='kw'>=</span> <span class='fu'>max</span>(<span class='no'>Temp</span>))</div><div class='output co'>#&gt;   Month        m m1
+#&gt; 1     5 65.54839 81
+#&gt; 2     6 79.10000 93
+#&gt; 3     7 83.90323 92
+#&gt; 4     8 83.96774 97
+#&gt; 5     9 76.90000 93</div><div class='input'>
 <span class='no'>airquality</span><span class='kw'>%&gt;%</span>
-  <span class='kw pkg'>noplyr</span><span class='kw ns'>::</span><span class='fu'>b_group_by</span>(<span class='no'>Month</span>,<span class='no'>Day</span>)<span class='kw'>%&gt;%</span>
-  <span class='kw pkg'>noplyr</span><span class='kw ns'>::</span><span class='fu'>b_summarize</span>(<span class='kw'>m</span> <span class='kw'>=</span> <span class='fu'>mean</span>(<span class='no'>Temp</span>),<span class='kw'>m1</span> <span class='kw'>=</span> <span class='fu'>max</span>(<span class='no'>Temp</span>))</div><div class='output co'>#&gt; <span class='error'>Error in loadNamespace(name): there is no package called ‘noplyr’</span></div><div class='input'>
+  <span class='kw pkg'>bplyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/bplyr/topics/b_group_by'>b_group_by</a></span>(<span class='no'>Month</span>,<span class='no'>Day</span>)<span class='kw'>%&gt;%</span>
+  <span class='kw pkg'>bplyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/bplyr/topics/b_summarize'>b_summarize</a></span>(<span class='kw'>m</span> <span class='kw'>=</span> <span class='fu'>mean</span>(<span class='no'>Temp</span>),<span class='kw'>m1</span> <span class='kw'>=</span> <span class='fu'>max</span>(<span class='no'>Temp</span>))</div><div class='output co'>#&gt;     Month Day  m m1
+#&gt; 1       5   1 67 67
+#&gt; 2       5   2 78 78
+#&gt; 3       5   3 84 84
+#&gt; 4       5   4 81 81
+#&gt; 5       5   5 91 91
+#&gt; 6       5   6 72 72
+#&gt; 7       5   7 74 74
+#&gt; 8       5   8 85 85
+#&gt; 9       5   9 81 81
+#&gt; 10      5  10 92 92
+#&gt; 11      5  11 74 74
+#&gt; 12      5  12 67 67
+#&gt; 13      5  13 81 81
+#&gt; 14      5  14 82 82
+#&gt; 15      5  15 93 93
+#&gt; 16      5  16 62 62
+#&gt; 17      5  17 84 84
+#&gt; 18      5  18 84 84
+#&gt; 19      5  19 86 86
+#&gt; 20      5  20 93 93
+#&gt; 21      5  21 56 56
+#&gt; 22      5  22 85 85
+#&gt; 23      5  23 83 83
+#&gt; 24      5  24 85 85
+#&gt; 25      5  25 87 87
+#&gt; 26      5  26 66 66
+#&gt; 27      5  27 79 79
+#&gt; 28      5  28 83 83
+#&gt; 29      5  29 87 87
+#&gt; 30      5  30 84 84
+#&gt; 31      5  31 65 65
+#&gt; 32      6   1 82 82
+#&gt; 33      6   2 88 88
+#&gt; 34      6   3 89 89
+#&gt; 35      6   4 80 80
+#&gt; 36      6   5 59 59
+#&gt; 37      6   6 87 87
+#&gt; 38      6   7 92 92
+#&gt; 39      6   8 90 90
+#&gt; 40      6   9 78 78
+#&gt; 41      6  10 61 61
+#&gt; 42      6  11 90 90
+#&gt; 43      6  12 92 92
+#&gt; 44      6  13 90 90
+#&gt; 45      6  14 75 75
+#&gt; 46      6  15 69 69
+#&gt; 47      6  16 87 87
+#&gt; 48      6  17 89 89
+#&gt; 49      6  18 92 92
+#&gt; 50      6  19 73 73
+#&gt; 51      6  20 74 74
+#&gt; 52      6  21 93 93
+#&gt; 53      6  22 82 82
+#&gt; 54      6  23 86 86
+#&gt; 55      6  24 81 81
+#&gt; 56      6  25 69 69
+#&gt; 57      6  26 92 92
+#&gt; 58      6  27 73 73
+#&gt; 59      6  28 86 86
+#&gt; 60      6  29 76 76
+#&gt; 61      6  30 66 66
+#&gt; 62      7   1 82 82
+#&gt; 63      7   2 81 81
+#&gt; 64      7   3 82 82
+#&gt; 65      7   4 77 77
+#&gt; 66      7   5 68 68
+#&gt; 67      7   6 80 80
+#&gt; 68      7   7 91 91
+#&gt; 69      7   8 80 80
+#&gt; 70      7   9 71 71
+#&gt; 71      7  10 58 58
+#&gt; 72      7  11 79 79
+#&gt; 73      7  12 80 80
+#&gt; 74      7  13 79 79
+#&gt; 75      7  14 71 71
+#&gt; 76      7  15 64 64
+#&gt; 77      7  16 77 77
+#&gt; 78      7  17 81 81
+#&gt; 79      7  18 77 77
+#&gt; 80      7  19 78 78
+#&gt; 81      7  20 66 66
+#&gt; 82      7  21 72 72
+#&gt; 83      7  22 82 82
+#&gt; 84      7  23 79 79
+#&gt; 85      7  24 67 67
+#&gt; 86      7  25 57 57
+#&gt; 87      7  26 65 65
+#&gt; 88      7  27 84 84
+#&gt; 89      7  28 76 76
+#&gt; 90      7  29 76 76
+#&gt; 91      7  30 68 68
+#&gt; 92      7  31 73 73
+#&gt; 93      8   1 87 87
+#&gt; 94      8   2 78 78
+#&gt; 95      8   3 68 68
+#&gt; 96      8   4 62 62
+#&gt; 97      8   5 76 76
+#&gt; 98      8   6 85 85
+#&gt; 99      8   7 78 78
+#&gt; 100     8   8 82 82
+#&gt; 101     8   9 59 59
+#&gt; 102     8  10 77 77
+#&gt; 103     8  11 74 74
+#&gt; 104     8  12 77 77
+#&gt; 105     8  13 64 64
+#&gt; 106     8  14 73 73
+#&gt; 107     8  15 76 76
+#&gt; 108     8  16 81 81
+#&gt; 109     8  17 72 72
+#&gt; 110     8  18 71 71
+#&gt; 111     8  19 61 61
+#&gt; 112     8  20 76 76
+#&gt; 113     8  21 82 82
+#&gt; 114     8  22 75 75
+#&gt; 115     8  23 81 81
+#&gt; 116     8  24 61 61
+#&gt; 117     8  25 76 76
+#&gt; 118     8  26 86 86
+#&gt; 119     8  27 79 79
+#&gt; 120     8  28 69 69
+#&gt; 121     8  29 57 57
+#&gt; 122     8  30 75 75
+#&gt; 123     8  31 85 85
+#&gt; 124     9   1 81 81
+#&gt; 125     9   2 63 63
+#&gt; 126     9   3 58 58
+#&gt; 127     9   4 78 78
+#&gt; 128     9   5 82 82
+#&gt; 129     9   6 86 86
+#&gt; 130     9   7 70 70
+#&gt; 131     9   8 57 57
+#&gt; 132     9   9 73 73
+#&gt; 133     9  10 86 86
+#&gt; 134     9  11 88 88
+#&gt; 135     9  12 77 77
+#&gt; 136     9  13 67 67
+#&gt; 137     9  14 80 80
+#&gt; 138     9  15 88 88
+#&gt; 139     9  16 97 97
+#&gt; 140     9  17 75 75
+#&gt; 141     9  18 81 81
+#&gt; 142     9  19 77 77
+#&gt; 143     9  20 86 86
+#&gt; 144     9  21 94 94
+#&gt; 145     9  22 76 76
+#&gt; 146     9  23 79 79
+#&gt; 147     9  24 83 83
+#&gt; 148     9  25 83 83
+#&gt; 149     9  26 96 96
+#&gt; 150     9  27 68 68
+#&gt; 151     9  28 76 76
+#&gt; 152     9  29 81 81
+#&gt; 153     9  30 94 94</div><div class='input'>
 <span class='no'>airquality</span><span class='kw'>%&gt;%</span>
-  <span class='kw pkg'>noplyr</span><span class='kw ns'>::</span><span class='fu'>b_mutate</span>(<span class='kw'>Month</span> <span class='kw'>=</span> <span class='fu'>factor</span>(<span class='no'>Month</span>))<span class='kw'>%&gt;%</span>
-  <span class='kw pkg'>noplyr</span><span class='kw ns'>::</span><span class='fu'>b_group_by</span>(<span class='no'>Month</span>)<span class='kw'>%&gt;%</span>
-  <span class='kw pkg'>noplyr</span><span class='kw ns'>::</span><span class='fu'>b_summarize</span>(<span class='kw'>m</span> <span class='kw'>=</span> <span class='fu'>mean</span>(<span class='no'>Temp</span>),<span class='kw'>m1</span> <span class='kw'>=</span> <span class='fu'>max</span>(<span class='no'>Temp</span>))</div><div class='output co'>#&gt; <span class='error'>Error in loadNamespace(name): there is no package called ‘noplyr’</span></div></pre>
+  <span class='kw pkg'>bplyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/bplyr/topics/b_mutate'>b_mutate</a></span>(<span class='kw'>Month</span> <span class='kw'>=</span> <span class='fu'>factor</span>(<span class='no'>Month</span>))<span class='kw'>%&gt;%</span>
+  <span class='kw pkg'>bplyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/bplyr/topics/b_group_by'>b_group_by</a></span>(<span class='no'>Month</span>)<span class='kw'>%&gt;%</span>
+  <span class='kw pkg'>bplyr</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/bplyr/topics/b_summarize'>b_summarize</a></span>(<span class='kw'>m</span> <span class='kw'>=</span> <span class='fu'>mean</span>(<span class='no'>Temp</span>),<span class='kw'>m1</span> <span class='kw'>=</span> <span class='fu'>max</span>(<span class='no'>Temp</span>))</div><div class='output co'>#&gt;   Month        m m1
+#&gt; 1     5 65.54839 81
+#&gt; 2     6 79.10000 93
+#&gt; 3     7 83.90323 92
+#&gt; 4     8 83.96774 97
+#&gt; 5     9 76.90000 93</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

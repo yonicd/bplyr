@@ -25,17 +25,17 @@ Mimics dplyr::summarize using base R and rlang
 }
 \examples{
 airquality\%>\%
-  noplyr::b_group_by(Month)\%>\%
-  noplyr::b_summarize(m = mean(Temp),m1 = max(Temp))
+  bplyr::b_group_by(Month)\%>\%
+  bplyr::b_summarize(m = mean(Temp),m1 = max(Temp))
 
 airquality\%>\%
-  noplyr::b_group_by(Month,Day)\%>\%
-  noplyr::b_summarize(m = mean(Temp),m1 = max(Temp))
+  bplyr::b_group_by(Month,Day)\%>\%
+  bplyr::b_summarize(m = mean(Temp),m1 = max(Temp))
 
 airquality\%>\%
-  noplyr::b_mutate(Month = factor(Month))\%>\%
-  noplyr::b_group_by(Month)\%>\%
-  noplyr::b_summarize(m = mean(Temp),m1 = max(Temp))
+  bplyr::b_mutate(Month = factor(Month))\%>\%
+  bplyr::b_group_by(Month)\%>\%
+  bplyr::b_summarize(m = mean(Temp),m1 = max(Temp))
 }
 \seealso{
 \code{\link[rlang]{quotation}}

@@ -158,7 +158,18 @@
 <span class='kw'>Y</span> <span class='kw'>=</span> <span class='fu'>rnorm</span>(<span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>2</span>),
 <span class='kw'>Z</span> <span class='kw'>=</span> <span class='fu'>rnorm</span>(<span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>4</span>)
 )
-<span class='no'>stocksm</span> <span class='kw'>&lt;-</span> <span class='fu'>gather</span>(<span class='no'>stocks</span>,<span class='st'>'stock'</span>, <span class='st'>'price'</span>, -<span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='error'>Error in gather(stocks, "stock", "price", -1): could not find function "gather"</span></div><div class='input'><span class='fu'>b_spread</span>(<span class='no'>stocksm</span>, <span class='st'>'stock'</span>, <span class='st'>'price'</span>)</div><div class='output co'>#&gt; <span class='error'>Error in names(data) %in% obj: object 'stocksm' not found</span></div><div class='input'><span class='co'># spread and gather are complements</span>
+<span class='no'>stocksm</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='b_gather.html'>b_gather</a></span>(<span class='no'>stocks</span>,<span class='st'>'stock'</span>, <span class='st'>'price'</span>, -<span class='fl'>1</span>)
+<span class='fu'>b_spread</span>(<span class='no'>stocksm</span>, <span class='st'>'stock'</span>, <span class='st'>'price'</span>)</div><div class='output co'>#&gt;          time            X          Y           Z
+#&gt; 1  2009-01-01 -1.400043517 -1.1073988  1.87261768
+#&gt; 2  2009-01-02  0.255317055  1.2579641  1.45180502
+#&gt; 3  2009-01-03 -2.437263611  4.1300498 -5.21817418
+#&gt; 4  2009-01-04 -0.005571287 -3.2619788  2.95110529
+#&gt; 5  2009-01-05  0.621552721  1.0248539  7.55401972
+#&gt; 6  2009-01-06  1.148411606 -3.7260230 -0.38978042
+#&gt; 7  2009-01-07 -1.821817661 -1.0440250 -3.74338941
+#&gt; 8  2009-01-08 -0.247325302 -0.1052038 -0.06380125
+#&gt; 9  2009-01-09 -0.244199607  1.0859927 -3.30715581
+#&gt; 10 2009-01-10 -0.282705449 -1.8281497 -6.04959861</div><div class='input'><span class='co'># spread and gather are complements</span>
 <span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>3</span>, <span class='fl'>4</span>), <span class='kw'>z</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>5</span>, <span class='fl'>6</span>))
 <span class='no'>sdf</span> <span class='kw'>&lt;-</span> <span class='fu'>b_spread</span>(<span class='no'>df</span>, <span class='st'>'x'</span>, <span class='st'>'y'</span>)
 <span class='fu'><a href='b_gather.html'>b_gather</a></span>(<span class='no'>sdf</span>, <span class='st'>'x'</span>, <span class='st'>'y'</span>, -<span class='fl'>1</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;   z x y
