@@ -5,15 +5,15 @@
 #' @return data.frame
 #' @examples
 #' airquality%>%
-#' rename(tmp = Temp,day = Day)%>%
+#' b_rename(tmp = Temp,day = Day)%>%
 #' head()
 #' @seealso
 #'  \code{\link[rlang]{quotation}}
-#' @rdname rename
+#' @rdname b_rename
 #' @export
 #' @author Jonathan Sidi
 #' @importFrom rlang quos quo_expr
-rename <- function(.data,...){
+b_rename <- function(.data,...){
 
   FNS <- lapply(rlang::quos(...),rlang::quo_expr)
 

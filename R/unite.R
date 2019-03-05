@@ -11,29 +11,29 @@
 #' @return data.frame
 #' @examples
 #'
-#' unite(airquality, col = "month_day", columns = c(Month,Day))%>%
+#' b_unite(airquality, col = "month_day", columns = c(Month,Day))%>%
 #' head
 #'
-#' unite(airquality, col = "temp_month_day", columns = c(Temp:Day))%>%
+#' b_unite(airquality, col = "temp_month_day", columns = c(Temp:Day))%>%
 #' head
 #'
-#' unite(airquality, col = "month_day", columns = c("Month","Day"))%>%
+#' b_unite(airquality, col = "month_day", columns = c("Month","Day"))%>%
 #' head
 #'
 #'
-#' @rdname unite
+#' @rdname b_unite
 #' @author Jonathan Sidi
 #' @export
 
-unite <- function(data,
+b_unite <- function(data,
                   col,
                   ...,
                   sep = '_',
                   remove = TRUE){
 
-  cols_idx <- names(select(data,...))
+  cols_idx <- names(b_select(data,...))
 
-  data[col] <- apply(X = select(data,...),
+  data[col] <- apply(X = b_select(data,...),
                     MARGIN = 1,
                     FUN = paste0,
                     collapse = sep)

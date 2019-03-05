@@ -7,21 +7,21 @@
 #' @return data.frame
 #' @examples
 #' airquality%>%
-#' count(Month,Temp)%>%
+#' b_count(Month,Temp)%>%
 #' head()
 #' @seealso
 #'  \code{\link[rlang]{quotation}}
-#' @rdname count
+#' @rdname b_count
 #' @export
 #' @author Jonathan Sidi
-count <- function(x,..., wt = NULL, sort = FALSE){
-  UseMethod("count")
+b_count <- function(x,..., wt = NULL, sort = FALSE){
+  UseMethod("b_count")
 }
 
-#' @rdname count
+#' @rdname b_count
 #' @importFrom rlang quos quo_expr
 #' @export
-count.default <- function(x,..., wt = NULL, sort = FALSE){
+b_count.default <- function(x,..., wt = NULL, sort = FALSE){
 
   EXPRS <- lapply(rlang::quos(...),function(x) rlang::quo_expr(x))
 
@@ -33,10 +33,10 @@ count.default <- function(x,..., wt = NULL, sort = FALSE){
 
 }
 
-#' @rdname count
+#' @rdname b_count
 #' @export
-count.split_df <- function(x,..., wt = NULL, sort = FALSE){
+b_count.split_df <- function(x,..., wt = NULL, sort = FALSE){
 
-  bindr(split(x), count, x, ...)
+  bindr(split(x), b_count, x, ...)
 
 }

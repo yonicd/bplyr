@@ -17,26 +17,26 @@
 #'
 #' # gather Sepal.Length, Sepal.Width, Petal.Length, Petal.Width
 #'
-#' gather(mini_iris, key = 'flower_att', value = 'measurement',
+#' b_gather(mini_iris, key = 'flower_att', value = 'measurement',
 #' columns = c('Sepal.Length', 'Sepal.Width', 'Petal.Length', 'Petal.Width'))
 #'
-#' gather(mini_iris, key = 'flower_att', value = 'measurement',
+#' b_gather(mini_iris, key = 'flower_att', value = 'measurement',
 #' columns = 1:4)
 #'
-#' gather(mini_iris, key = 'flower_att', value = 'measurement',
+#' b_gather(mini_iris, key = 'flower_att', value = 'measurement',
 #' columns = -5)
 #'
-#' gather(mini_iris, key = 'flower_att', value = 'measurement',
+#' b_gather(mini_iris, key = 'flower_att', value = 'measurement',
 #' columns = '^(Sepal|Petal)',regex = TRUE)
 #'
 #' @seealso
 #'  \code{\link[utils]{type.convert}}
-#' @rdname gather
+#' @rdname b_gather
 #' @author Jonathan Sidi
 #' @export
 #' @importFrom utils type.convert
 #' @importFrom stats na.omit
-gather <- function(data,
+b_gather <- function(data,
                    key = 'key',
                    value = 'value',
                    columns = NULL,

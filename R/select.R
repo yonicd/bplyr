@@ -6,30 +6,30 @@
 #' @examples
 #'
 #' airquality%>%
-#' select(c(Day,Temp))%>%
+#' b_select(c(Day,Temp))%>%
 #' head()
 #'
 #' airquality%>%
-#' select(c('Day','Temp'))%>%
+#' b_select(c('Day','Temp'))%>%
 #' head()
 #'
 #' airquality%>%
-#' select(-c(Day,Temp))%>%
+#' b_select(-c(Day,Temp))%>%
 #' head()
 #'
 #' @seealso
 #'  \code{\link[rlang]{quotation}},\code{\link[rlang]{quo_expr}}
-#' @rdname select
+#' @rdname b_select
 #' @export
 #' @author Jonathan Sidi
-select <- function(.data,...){
-  UseMethod("select")
+b_select <- function(.data,...){
+  UseMethod("b_select")
 }
 
 #' @importFrom rlang quos quo_expr
-#' @rdname select
+#' @rdname b_select
 #' @export
-select.default <- function(.data,...){
+b_select.default <- function(.data,...){
 
   subset(.data,
          select = unlist(lapply(
@@ -38,10 +38,10 @@ select.default <- function(.data,...){
          ))
 }
 
-#' @rdname select
+#' @rdname b_select
 #' @export
-select.split_df <- function(.data,...){
+b_select.split_df <- function(.data,...){
 
-  bindr(split(.data), select, .data, ...)
+  bindr(split(.data), b_select, .data, ...)
 
 }

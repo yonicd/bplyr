@@ -1,4 +1,4 @@
-Package: noplyr
+Package: bplyr
 Type: Package
 Title: Use dplyr and tidyr without the dependency overhead
 Version: 0.1.0
@@ -9,8 +9,8 @@ Maintainer: The package maintainer <yonicd@gmail.com>
 Description: Use basic dplyr and tidyr functionality without
       need to install all the tidyverse dependecies.
 License: MIT + file LICENSE
-URL: https://github.com/yonicd/noplyr
-BugReports: https://github.com/yonicd/noplyr/issues
+URL: https://github.com/yonicd/bplyr
+BugReports: https://github.com/yonicd/bplyr/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1

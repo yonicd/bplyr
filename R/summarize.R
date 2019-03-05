@@ -5,30 +5,30 @@
 #' @return data.frame
 #' @examples
 #' airquality%>%
-#'   noplyr::group_by(Month)%>%
-#'   noplyr::summarize(m = mean(Temp),m1 = max(Temp))
+#'   noplyr::b_group_by(Month)%>%
+#'   noplyr::b_summarize(m = mean(Temp),m1 = max(Temp))
 #'
 #' airquality%>%
-#'   noplyr::group_by(Month,Day)%>%
-#'   noplyr::summarize(m = mean(Temp),m1 = max(Temp))
+#'   noplyr::b_group_by(Month,Day)%>%
+#'   noplyr::b_summarize(m = mean(Temp),m1 = max(Temp))
 #'
 #' airquality%>%
-#'   noplyr::mutate(Month = factor(Month))%>%
-#'   noplyr::group_by(Month)%>%
-#'   noplyr::summarize(m = mean(Temp),m1 = max(Temp))
+#'   noplyr::b_mutate(Month = factor(Month))%>%
+#'   noplyr::b_group_by(Month)%>%
+#'   noplyr::b_summarize(m = mean(Temp),m1 = max(Temp))
 #' @seealso
 #'  \code{\link[rlang]{quotation}}
-#' @rdname summarize
+#' @rdname b_summarize
 #' @export
 #' @author Jonathan Sidi
 #' @importFrom rlang quos
-summarize <- function(.data,...){
-  UseMethod("summarize")
+b_summarize <- function(.data,...){
+  UseMethod("b_summarize")
 }
 
-#' @rdname summarize
+#' @rdname b_summarize
 #' @export
-summarize.default <- function(.data,...){
+b_summarize.default <- function(.data,...){
 
   FNS <- lapply(rlang::quos(...),quo_expr)
 
@@ -40,10 +40,10 @@ summarize.default <- function(.data,...){
 
 }
 
-#' @rdname summarize
+#' @rdname b_summarize
 #' @export
-summarize.split_df <- function(.data,...){
+b_summarize.split_df <- function(.data,...){
 
-  bindr(split(.data), summarize, .data, ...)
+  bindr(split(.data), b_summarize, .data, ...)
 
 }

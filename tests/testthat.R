@@ -1,4 +1,4 @@
 library(testthat)
-library(noplyr)
+library(bplyr)
 
-test_check("noplyr")
+test_check("bplyr")

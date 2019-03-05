@@ -5,7 +5,7 @@
 #' @return data.frame
 #' @examples
 #' airquality%>%
-#' mutate(
+#' b_mutate(
 #'     lOzone = log(Ozone),
 #'     Month  = factor(month.abb[Month]),
 #'     cTemp  = round((Temp - 32) * 5/9, 1),
@@ -14,17 +14,17 @@
 #' head()
 #' @seealso
 #'  \code{\link[rlang]{quotation}}
-#' @rdname mutate
+#' @rdname b_mutate
 #' @export
 #' @author Jonathan Sidi
-mutate <- function(.data,...){
-  UseMethod("mutate")
+b_mutate <- function(.data,...){
+  UseMethod("b_mutate")
 }
 
-#' @rdname mutate
+#' @rdname b_mutate
 #' @export
 #' @importFrom rlang quos quo_expr
-mutate.default <- function(.data,...){
+b_mutate.default <- function(.data,...){
 
   FNS <- lapply(rlang::quos(...),rlang::quo_expr)
 
@@ -36,10 +36,10 @@ mutate.default <- function(.data,...){
 
 }
 
-#' @rdname mutate
+#' @rdname b_mutate
 #' @export
-mutate.split_df <- function(.data,...){
+b_mutate.split_df <- function(.data,...){
 
-  bindr(split(.data), mutate, .data, ...)
+  bindr(split(.data), b_mutate, .data, ...)
 
 }

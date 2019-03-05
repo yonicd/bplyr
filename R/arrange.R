@@ -6,21 +6,21 @@
 #' @return data.frame
 #' @examples
 #' airquality%>%
-#' arrange(-Month,Temp)%>%
+#' b_arrange(-Month,Temp)%>%
 #' head()
 #' @seealso
 #'  \code{\link[rlang]{quotation}}
-#' @rdname arrange
+#' @rdname b_arrange
 #' @export
 #' @author Jonathan Sidi
-arrange <- function(.data,...){
-  UseMethod("arrange")
+b_arrange <- function(.data,...){
+  UseMethod("b_arrange")
 }
 
-#' @rdname arrange
+#' @rdname b_arrange
 #' @export
 #' @importFrom rlang quos quo_expr
-arrange.default <- function(.data,...){
+b_arrange.default <- function(.data,...){
 
   EXPRS <- lapply(rlang::quos(...),function(x) rlang::quo_expr(x))
 
@@ -28,10 +28,10 @@ arrange.default <- function(.data,...){
 
 }
 
-#' @rdname arrange
+#' @rdname b_arrange
 #' @export
-arrange.split_df <- function(.data,...){
+b_arrange.split_df <- function(.data,...){
 
-  bindr(split(.data), arrange, .data, ...)
+  bindr(split(.data), b_arrange, .data, ...)
 
 }

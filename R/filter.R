@@ -5,31 +5,31 @@
 #' @return data.frame
 #' @examples
 #' airquality%>%
-#' filter(Temp > 80)%>%
+#' b_filter(Temp > 80)%>%
 #' head()
 #'
 #' @seealso
 #'  \code{\link[rlang]{quo_expr}},\code{\link[rlang]{quotation}}
-#' @rdname filter
+#' @rdname b_filter
 #' @export
 #' @author Jonathan Sidi
-filter <- function(.data,...){
-  UseMethod("filter")
+b_filter <- function(.data,...){
+  UseMethod("b_filter")
 }
 
-#' @rdname filter
+#' @rdname b_filter
 #' @export
 #' @importFrom rlang quo_expr quo
-filter.default <- function(.data,...){
+b_filter.default <- function(.data,...){
   subset(.data,{
     eval(rlang::quo_expr(rlang::quo(...)))
   })
 }
 
-#' @rdname filter
+#' @rdname b_filter
 #' @export
-filter.split_df <- function(.data,...){
+b_filter.split_df <- function(.data,...){
 
-  bindr(split(.data), filter, .data, ...)
+  bindr(split(.data), b_filter, .data, ...)
 
 }

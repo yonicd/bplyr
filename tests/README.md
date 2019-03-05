@@ -1,6 +1,9 @@
 Tests and Coverage
 ================
-12 January, 2019 09:14:45
+05 March, 2019 09:34:19
+
+  - [Coverage](#coverage)
+  - [Unit Tests](#unit-tests)
 
 This output is created by
 [covrpage](https://github.com/metrumresearchgroup/covrpage).
@@ -12,7 +15,7 @@ Coverage summary is created using the
 
 | Object                            | Coverage (%) |
 | :-------------------------------- | :----------: |
-| noplyr                            |      0       |
+| bplyr                             |      0       |
 | [R/arrange.R](../R/arrange.R)     |      0       |
 | [R/count.R](../R/count.R)         |      0       |
 | [R/filter.R](../R/filter.R)       |      0       |
@@ -37,7 +40,7 @@ package.
 
 | file                                     | n |  time | error | failed | skipped | warning | icon |
 | :--------------------------------------- | -: | ----: | ----: | -----: | ------: | ------: | :--- |
-| [test\_noplyr.R](testthat/test_noplyr.R) | 1 | 0.012 |     0 |      0 |       1 |       0 | 🔶    |
+| [test\_noplyr.R](testthat/test_noplyr.R) | 1 | 0.014 |     0 |      0 |       1 |       0 | 🔶    |
 
 <details open>
 
@@ -46,7 +49,7 @@ package.
 
 | file                                           | context                       | test                | status  | n |  time | icon |
 | :--------------------------------------------- | :---------------------------- | :------------------ | :------ | -: | ----: | :--- |
-| [test\_noplyr.R](testthat/test_noplyr.R#L2_L6) | minimal package functionality | we can do something | SKIPPED | 1 | 0.012 | 🔶    |
+| [test\_noplyr.R](testthat/test_noplyr.R#L2_L6) | minimal package functionality | we can do something | SKIPPED | 1 | 0.014 | 🔶    |
 
 | Failed | Warning | Skipped |
 | :----- | :------ | :------ |
@@ -66,11 +69,11 @@ package.
 | Language | en\_US                              |
 | Timezone | America/New\_York                   |
 
-| Package  | Version    |
-| :------- | :--------- |
-| testthat | 2.0.0.9000 |
-| covr     | 3.2.0      |
-| covrpage | 0.0.69     |
+| Package  | Version |
+| :------- | :------ |
+| testthat | 2.0.1   |
+| covr     | 3.2.1   |
+| covrpage | 0.0.70  |
 
 </details>
 

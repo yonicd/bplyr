@@ -13,25 +13,25 @@
 #' Z = rnorm(10, 0, 4)
 #' )
 #' stocksm <- gather(stocks,'stock', 'price', -1)
-#' spread(stocksm, 'stock', 'price')
+#' b_spread(stocksm, 'stock', 'price')
 
 #' # spread and gather are complements
 #' df <- data.frame(x = c("a", "b"), y = c(3, 4), z = c(5, 6))
-#' sdf <- spread(df, 'x', 'y')
-#' gather(sdf, 'x', 'y', -1, na.rm = TRUE)
+#' sdf <- b_spread(df, 'x', 'y')
+#' b_gather(sdf, 'x', 'y', -1, na.rm = TRUE)
 #'
 #' # Use 'convert = TRUE' to produce variables of mixed type
 #' df <- data.frame(row = rep(c(1, 51), each = 3),
 #'                  var = c("Sepal.Length", "Species", "Species_num"),
 #'                  value = c(5.1, "setosa", 1, 7.0, "versicolor", 2))
 #'
-#' str(spread(df, 'var', 'value'))
-#' str(spread(df, 'var', 'value',convert = TRUE))
-#' @rdname spread
+#' str(b_spread(df, 'var', 'value'))
+#' str(b_spread(df, 'var', 'value',convert = TRUE))
+#' @rdname b_spread
 #' @author Jonathan Sidi
 #' @export
 #' @importFrom utils type.convert
-spread <- function(data,
+b_spread <- function(data,
                    key,
                    value,
                    convert = FALSE) {

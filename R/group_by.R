@@ -5,17 +5,17 @@
 #' @param add When add = FALSE, the default, group_by() will override existing groups.
 #'  To add to the existing groups, use add = TRUE., Default: FALSE
 #' @return data.frame
-#' @rdname group_by
+#' @rdname b_group_by
 #' @export
 
-group_by <- function(.data,..., add = FALSE){
-  UseMethod("group_by")
+b_group_by <- function(.data,..., add = FALSE){
+  UseMethod("b_group_by")
 }
 
-#' @rdname group_by
+#' @rdname b_group_by
 #' @export
 #' @importFrom rlang quos
-group_by.data.frame <- function(.data,..., add = FALSE){
+b_group_by.data.frame <- function(.data,..., add = FALSE){
   attr(.data,'splitby') <- rlang::quos(...)
   class(.data) <- c('split_df',class(.data))
   .data
@@ -34,22 +34,22 @@ regroup <- function(new,old){
 #' @description Mimics dplyr::ungroup using base R
 #' @param .data data.frame
 #' @return data.frame
-#' @rdname ungroup
+#' @rdname b_ungroup
 #' @export
 
-ungroup <- function(.data){
-  UseMethod("ungroup")
+b_ungroup <- function(.data){
+  UseMethod("b_ungroup")
 }
 
-#' @rdname ungroup
+#' @rdname b_ungroup
 #' @export
-ungroup.default <- function(.data){
+b_ungroup.default <- function(.data){
   .data
 }
 
-#' @rdname ungroup
+#' @rdname b_ungroup
 #' @export
-ungroup.split_df <- function(.data){
+b_ungroup.split_df <- function(.data){
 
   attr(.data,'splitby') <- NULL
 
