@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • bplyr</title>
+<title>Remove grouping from data.frame — b_ungroup • bplyr</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
@@ -32,7 +32,10 @@
 
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Remove grouping from data.frame — b_ungroup" />
+
+<meta property="og:description" content="Mimics dplyr::ungroup using base R" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -48,7 +51,7 @@
   </head>
 
   <body>
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -109,17 +112,48 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Remove grouping from data.frame</h1>
+    <small class="dont-index">Source: <a href='https://github.com/yonicd/bplyr/blob/master/R/group_by.R'><code>R/group_by.R</code></a></small>
+    <div class="hidden name"><code>b_ungroup.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <ul>
-        <li><a href="tests_and_coverage.html">Tests and Coverage</a></li>
-      </ul>
+    <div class="ref-description">
+    
+    <p>Mimics dplyr::ungroup using base R</p>
+    
     </div>
+
+    <pre class="usage"><span class='fu'>b_ungroup</span>(<span class='no'>.data</span>)
+
+<span class='co'># S3 method for default</span>
+<span class='fu'>b_ungroup</span>(<span class='no'>.data</span>)
+
+<span class='co'># S3 method for split_df</span>
+<span class='fu'>b_ungroup</span>(<span class='no'>.data</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>.data</th>
+      <td><p>data.frame</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>data.frame</p>
+    
+
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
+
   </div>
 </div>
 

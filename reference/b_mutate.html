@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • bplyr</title>
+<title>Add new variables — b_mutate • bplyr</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
@@ -32,7 +32,10 @@
 
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Add new variables — b_mutate" />
+
+<meta property="og:description" content="Mimics dplyr::mutate using base R and rlang" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -48,7 +51,7 @@
   </head>
 
   <body>
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -109,17 +112,79 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Add new variables</h1>
+    <small class="dont-index">Source: <a href='https://github.com/yonicd/bplyr/blob/master/R/mutate.R'><code>R/mutate.R</code></a></small>
+    <div class="hidden name"><code>b_mutate.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <ul>
-        <li><a href="tests_and_coverage.html">Tests and Coverage</a></li>
-      </ul>
+    <div class="ref-description">
+    
+    <p>Mimics dplyr::mutate using base R and rlang</p>
+    
     </div>
+
+    <pre class="usage"><span class='fu'>b_mutate</span>(<span class='no'>.data</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for default</span>
+<span class='fu'>b_mutate</span>(<span class='no'>.data</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for split_df</span>
+<span class='fu'>b_mutate</span>(<span class='no'>.data</span>, <span class='no'>...</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>.data</th>
+      <td><p>data.frame</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Name-value pairs of expressions</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>data.frame</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='https://rlang.r-lib.org/reference/quotation.html'>quotation</a></code></p></div>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>airquality</span><span class='kw'>%&gt;%</span>
+<span class='fu'>b_mutate</span>(
+    <span class='kw'>lOzone</span> <span class='kw'>=</span> <span class='fu'>log</span>(<span class='no'>Ozone</span>),
+    <span class='kw'>Month</span>  <span class='kw'>=</span> <span class='fu'>factor</span>(<span class='no'>month.abb</span>[<span class='no'>Month</span>]),
+    <span class='kw'>cTemp</span>  <span class='kw'>=</span> <span class='fu'>round</span>((<span class='no'>Temp</span> - <span class='fl'>32</span>) * <span class='fl'>5</span>/<span class='fl'>9</span>, <span class='fl'>1</span>),
+    <span class='kw'>S.cT</span>   <span class='kw'>=</span> <span class='no'>Solar.R</span> / <span class='no'>cTemp</span>
+)<span class='kw'>%&gt;%</span>
+<span class='fu'>head</span>()</div><div class='output co'>#&gt;   Ozone Solar.R Wind Temp Month Day      S.cT cTemp   lOzone
+#&gt; 1    41     190  7.4   67   May   1  9.793814  19.4 3.713572
+#&gt; 2    36     118  8.0   72   May   2  5.315315  22.2 3.583519
+#&gt; 3    12     149 12.6   74   May   3  6.394850  23.3 2.484907
+#&gt; 4    18     313 11.5   62   May   4 18.742515  16.7 2.890372
+#&gt; 5    NA      NA 14.3   56   May   5        NA  13.3       NA
+#&gt; 6    28      NA 14.9   66   May   6        NA  18.9 3.332205</div></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
+
+    <h2>Author</h2>
+    
+Jonathan Sidi
+
   </div>
 </div>
 
