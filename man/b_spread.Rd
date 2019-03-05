@@ -28,7 +28,7 @@ X = rnorm(10, 0, 1),
 Y = rnorm(10, 0, 2),
 Z = rnorm(10, 0, 4)
 )
-stocksm <- gather(stocks,'stock', 'price', -1)
+stocksm <- b_gather(stocks,'stock', 'price', -1)
 b_spread(stocksm, 'stock', 'price')
 # spread and gather are complements
 df <- data.frame(x = c("a", "b"), y = c(3, 4), z = c(5, 6))

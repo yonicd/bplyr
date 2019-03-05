@@ -12,7 +12,7 @@
 #' Y = rnorm(10, 0, 2),
 #' Z = rnorm(10, 0, 4)
 #' )
-#' stocksm <- gather(stocks,'stock', 'price', -1)
+#' stocksm <- b_gather(stocks,'stock', 'price', -1)
 #' b_spread(stocksm, 'stock', 'price')
 
 #' # spread and gather are complements

@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Use dplyr and tidyr without the dependency overhead • noplyr</title>
+<title>Use dplyr and tidyr without the dependency overhead • bplyr</title>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
@@ -31,7 +31,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">noplyr</a>
+        <a class="navbar-link" href="index.html">bplyr</a>
         <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
@@ -62,7 +62,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/yonicd/noplyr">
+  <a href="https://github.com/yonicd/bplyr">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -84,12 +84,15 @@
     
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<div id="noplyr" class="section level1">
+<div id="base-plyr-bplyr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#noplyr" class="anchor"></a>noplyr</h1></div>
+<a href="#base-plyr-bplyr" class="anchor"></a>base + plyr = bplyr</h1></div>
 <p>Run basic functions of <code>dplyr</code> and <code>tidyr</code> with only base <code>R</code> and <code>rlang</code>.</p>
 <blockquote>
 <p>Disclaimer: this is experimental, use deliberately and with caution.</p>
+</blockquote>
+<blockquote>
+<p>Previously called noplyr</p>
 </blockquote>
 <div id="when-could-this-package-be-useful" class="section level2">
 <h2 class="hasAnchor">
@@ -99,20 +102,22 @@
 <li>Continuous integration <code>R</code> scripts</li>
 <li>Low package dependency workflows or products</li>
 </ul>
+<p>All functions in bplyr mimic specific functions in dplyr and tidyr, and have a trailing prefix b_* to them. so arrange is b_arrange and so forth.</p>
+<p>This has been done as to not create namespace conflicts with dplyr or tidyr, as this package does not try to replace the intended full features of those packages, but create light weight, fast installing alternatives when applicable.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">'yonicd/noplyr'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">'yonicd/bplyr'</span>)</a></code></pre></div>
 </div>
 <div id="current-build" class="section level2">
 <h2 class="hasAnchor">
 <a href="#current-build" class="anchor"></a>Current Build</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">data.frame</span>(<span class="dt">package =</span> <span class="kw">c</span>(<span class="st">'rlang'</span>,<span class="st">'dplyr'</span>,<span class="st">'tidyr'</span>),</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">           <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="st">  </span>noplyr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/noplyr/topics/group_by">group_by</a></span>(package)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="st">  </span>noplyr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/noplyr/topics/mutate">mutate</a></span>(<span class="dt">version =</span> <span class="kw">as.character</span>(<span class="kw">packageVersion</span>(package)))<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="st">  </span>knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">data.frame</span>(<span class="dt">package =</span> <span class="kw">c</span>(<span class="st">'rlang'</span>,<span class="st">'dplyr'</span>,<span class="st">'tidyr'</span>),</a>
+<a class="sourceLine" id="cb2-2" title="2">           <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="st">  </span>bplyr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/bplyr/topics/b_group_by">b_group_by</a></span>(package)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="st">  </span>bplyr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/bplyr/topics/b_mutate">b_mutate</a></span>(<span class="dt">version =</span> <span class="kw">as.character</span>(<span class="kw">packageVersion</span>(package)))<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="st">  </span>knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>()</a></code></pre></div>
 <table class="table table">
 <thead><tr class="header">
 <th align="left">package</th>
@@ -121,11 +126,11 @@
 <tbody>
 <tr class="odd">
 <td align="left">dplyr</td>
-<td align="left">0.7.6</td>
+<td align="left">0.8.0</td>
 </tr>
 <tr class="even">
 <td align="left">rlang</td>
-<td align="left">0.3.0.1</td>
+<td align="left">0.3.1</td>
 </tr>
 <tr class="odd">
 <td align="left">tidyr</td>
@@ -187,9 +192,9 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/yonicd/noplyr">https://​github.com/​yonicd/​noplyr</a>
+<li>Browse source code at <br><a href="https://github.com/yonicd/bplyr">https://​github.com/​yonicd/​bplyr</a>
 </li>
-<li>Report a bug at <br><a href="https://github.com/yonicd/noplyr/issues">https://​github.com/​yonicd/​noplyr/​issues</a>
+<li>Report a bug at <br><a href="https://github.com/yonicd/bplyr/issues">https://​github.com/​yonicd/​bplyr/​issues</a>
 </li>
 </ul>
 </div>
@@ -211,10 +216,10 @@
       <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/yonicd/noplyr"><img src="https://travis-ci.org/yonicd/noplyr.svg?branch=master" alt="Travis-CI Build Status"></a></li>
-<li><a href="https://codecov.io/gh/yonicd/noplyr?branch=master"><img src="https://codecov.io/gh/yonicd/noplyr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://travis-ci.org/yonicd/bplyr"><img src="https://travis-ci.org/yonicd/bplyr.svg?branch=master" alt="Travis-CI Build Status"></a></li>
+<li><a href="https://codecov.io/gh/yonicd/bplyr?branch=master"><img src="https://codecov.io/gh/yonicd/bplyr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></li>
-<li><a href="http://tinyurl.com/y8wab3dk"><img src="https://img.shields.io/badge/covrpage-Last_Build_2019_01_12-yellowgreen.svg" alt="Covrpage Summary"></a></li>
+<li><a href="http://tinyurl.com/y4cpzsxq"><img src="https://img.shields.io/badge/covrpage-Last_Build_2019_03_05-yellowgreen.svg" alt="Covrpage Summary"></a></li>
 </ul>
 </div>
 </div>

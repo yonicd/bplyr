@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • bplyr</title>
+<title>Count observations by group — b_count • bplyr</title>
 
 <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
@@ -32,7 +32,10 @@
 
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Count observations by group — b_count" />
+
+<meta property="og:description" content="Mimics dplyr::count using base R and rlang" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -48,7 +51,7 @@
   </head>
 
   <body>
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -109,17 +112,82 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Count observations by group</h1>
+    <small class="dont-index">Source: <a href='https://github.com/yonicd/bplyr/blob/master/R/count.R'><code>R/count.R</code></a></small>
+    <div class="hidden name"><code>b_count.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <ul>
-        <li><a href="tests_and_coverage.html">Tests and Coverage</a></li>
-      </ul>
+    <div class="ref-description">
+    
+    <p>Mimics dplyr::count using base R and rlang</p>
+    
     </div>
+
+    <pre class="usage"><span class='fu'>b_count</span>(<span class='no'>x</span>, <span class='no'>...</span>, <span class='kw'>wt</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>sort</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+
+<span class='co'># S3 method for default</span>
+<span class='fu'>b_count</span>(<span class='no'>x</span>, <span class='no'>...</span>, <span class='kw'>wt</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>sort</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+
+<span class='co'># S3 method for split_df</span>
+<span class='fu'>b_count</span>(<span class='no'>x</span>, <span class='no'>...</span>, <span class='kw'>wt</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>sort</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>data.frame</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>variables to group by</p></td>
+    </tr>
+    <tr>
+      <th>wt</th>
+      <td><p>numeric, weights to count by, Default: NULL</p></td>
+    </tr>
+    <tr>
+      <th>sort</th>
+      <td><p>boolean, if TRUE will sort output in descending order of n, default = FALSE</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>data.frame</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='https://rlang.r-lib.org/reference/quotation.html'>quotation</a></code></p></div>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>airquality</span><span class='kw'>%&gt;%</span>
+<span class='fu'>b_count</span>(<span class='no'>Month</span>,<span class='no'>Temp</span>)<span class='kw'>%&gt;%</span>
+<span class='fu'>head</span>()</div><div class='output co'>#&gt;   Month Temp n
+#&gt; 1     5   56 1
+#&gt; 2     6   56 0
+#&gt; 3     7   56 0
+#&gt; 4     8   56 0
+#&gt; 5     9   56 0
+#&gt; 6     5   57 3</div></pre>
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
+
+    <h2>Author</h2>
+    
+Jonathan Sidi
+
   </div>
 </div>
 
