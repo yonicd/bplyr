@@ -4,8 +4,16 @@
 \alias{b_gather}
 \title{base gather}
 \usage{
-b_gather(data, key = "key", value = "value", columns = NULL,
-  regex = FALSE, ..., na.rm = FALSE, convert = FALSE)
+b_gather(
+  data,
+  key = "key",
+  value = "value",
+  columns = NULL,
+  regex = FALSE,
+  ...,
+  na.rm = FALSE,
+  convert = FALSE
+)
 }
 \arguments{
 \item{data}{data.frame}

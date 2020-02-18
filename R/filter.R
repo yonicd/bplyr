@@ -9,7 +9,7 @@
 #' head()
 #'
 #' @seealso
-#'  \code{\link[rlang]{quo_expr}},\code{\link[rlang]{quotation}}
+#'  \code{\link[rlang]{quo_squash}},\code{\link[rlang]{quotation}}
 #' @rdname b_filter
 #' @export
 #' @author Jonathan Sidi
@@ -19,10 +19,10 @@ b_filter <- function(.data,...){
 
 #' @rdname b_filter
 #' @export
-#' @importFrom rlang quo_expr quo
+#' @importFrom rlang quo_squash quo
 b_filter.default <- function(.data,...){
   subset(.data,{
-    eval(rlang::quo_expr(rlang::quo(...)))
+    eval(rlang::quo_squash(rlang::quo(...)))
   })
 }
 

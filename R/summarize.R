@@ -21,7 +21,7 @@
 #' @rdname b_summarize
 #' @export
 #' @author Jonathan Sidi
-#' @importFrom rlang quos
+#' @importFrom rlang quos quo_squash
 b_summarize <- function(.data,...){
   UseMethod("b_summarize")
 }
@@ -30,7 +30,7 @@ b_summarize <- function(.data,...){
 #' @export
 b_summarize.default <- function(.data,...){
 
-  FNS <- lapply(rlang::quos(...),quo_expr)
+  FNS <- lapply(rlang::quos(...),rlang::quo_squash)
 
   EVALS <- lapply(FNS,function(x){
     with(.data,eval(x))

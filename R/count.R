@@ -19,11 +19,11 @@ b_count <- function(x,..., wt = NULL, sort = FALSE){
 }
 
 #' @rdname b_count
-#' @importFrom rlang quos quo_expr
+#' @importFrom rlang quos quo_squash
 #' @export
 b_count.default <- function(x,..., wt = NULL, sort = FALSE){
 
-  EXPRS <- lapply(rlang::quos(...),function(x) rlang::quo_expr(x))
+  EXPRS <- lapply(rlang::quos(...),function(x) rlang::quo_squash(x))
 
   RET <- as.data.frame(with(x,do.call(table,EXPRS)))
 

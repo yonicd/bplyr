@@ -23,10 +23,10 @@ b_mutate <- function(.data,...){
 
 #' @rdname b_mutate
 #' @export
-#' @importFrom rlang quos quo_expr
+#' @importFrom rlang quos quo_squash
 b_mutate.default <- function(.data,...){
 
-  FNS <- lapply(rlang::quos(...),rlang::quo_expr)
+  FNS <- lapply(rlang::quos(...),rlang::quo_squash)
 
   EXPRS <- lapply(names(FNS),function(x){
     sprintf('%s <- %s',x,deparse(FNS[[x]]))

@@ -51,9 +51,9 @@ data.frame(package = c('rlang','dplyr','tidyr'),
 
 | package | version |
 | :------ | :------ |
-| dplyr   | 0.8.0   |
-| rlang   | 0.3.1   |
-| tidyr   | 0.8.1   |
+| dplyr   | 0.8.4   |
+| rlang   | 0.4.4   |
+| tidyr   | 1.0.2   |
 
 ### dplyr
 

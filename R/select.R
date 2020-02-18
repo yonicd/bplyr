@@ -18,7 +18,7 @@
 #' head()
 #'
 #' @seealso
-#'  \code{\link[rlang]{quotation}},\code{\link[rlang]{quo_expr}}
+#'  \code{\link[rlang]{quotation}},\code{\link[rlang]{quo_squash}}
 #' @rdname b_select
 #' @export
 #' @author Jonathan Sidi
@@ -26,7 +26,7 @@ b_select <- function(.data,...){
   UseMethod("b_select")
 }
 
-#' @importFrom rlang quos quo_expr
+#' @importFrom rlang quos quo_squash
 #' @rdname b_select
 #' @export
 b_select.default <- function(.data,...){
@@ -34,7 +34,7 @@ b_select.default <- function(.data,...){
   subset(.data,
          select = unlist(lapply(
            rlang::quos(...),
-           function(x){eval(rlang::quo_expr(x))})
+           function(x){eval(rlang::quo_squash(x))})
          ))
 }
 

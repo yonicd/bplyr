@@ -19,10 +19,10 @@ b_arrange <- function(.data,...){
 
 #' @rdname b_arrange
 #' @export
-#' @importFrom rlang quos quo_expr
+#' @importFrom rlang quos quo_squash
 b_arrange.default <- function(.data,...){
 
-  EXPRS <- lapply(rlang::quos(...),function(x) rlang::quo_expr(x))
+  EXPRS <- lapply(rlang::quos(...),function(x) rlang::quo_squash(x))
 
   .data[with(.data,do.call(order,EXPRS)),]
 

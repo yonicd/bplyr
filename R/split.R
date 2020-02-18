@@ -1,10 +1,10 @@
-#' @importFrom rlang quo_expr
+#' @importFrom rlang quo_squash
 splitter <- function(.data){
 
   subset(strip_class(.data),
          select = unlist(lapply(
            attr(.data,'splitby'),
-           function(x){eval(rlang::quo_expr(x))})
+           function(x){eval(rlang::quo_squash(x))})
          ))
 }
 

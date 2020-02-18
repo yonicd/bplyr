@@ -39,7 +39,7 @@ head()
 
 }
 \seealso{
-\code{\link[rlang]{quotation}},\code{\link[rlang]{quo_expr}}
+\code{\link[rlang]{quotation}},\code{\link[rlang]{quo_squash}}
 }
 \author{
 Jonathan Sidi
