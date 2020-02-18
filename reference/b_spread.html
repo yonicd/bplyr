@@ -8,23 +8,25 @@
 
 <title>base spread — b_spread • bplyr</title>
 
-<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.1/clipboard.min.js" integrity="sha256-hIvIxeqhGZF+VVeM55k0mJvWpQ6gTkWk3Emc+NmowYA=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -32,20 +34,23 @@
 
 
 
-<meta property="og:title" content="base spread — b_spread" />
 
+<meta property="og:title" content="base spread — b_spread" />
 <meta property="og:description" content="base spread mimics basic functionality of tidyr::spread" />
 <meta name="twitter:card" content="summary" />
 
 
 
+
 <!-- mathjax -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
 
 
   </head>
@@ -64,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bplyr</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -72,7 +77,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -92,11 +97,10 @@
   </ul>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/yonicd/bplyr">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -107,6 +111,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -118,13 +123,11 @@
     </div>
 
     <div class="ref-description">
-    
     <p>base spread mimics basic functionality of tidyr::spread</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>b_spread</span>(<span class='no'>data</span>, <span class='no'>key</span>, <span class='no'>value</span>, <span class='kw'>convert</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -145,20 +148,19 @@
       <td><p>type.convert will run on each result column if TRUE, Default: FALSE</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>data.frame</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>stocks</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(
-<span class='kw'>time</span> <span class='kw'>=</span> <span class='fu'>as.Date</span>(<span class='st'>'2009-01-01'</span>) + <span class='fl'>0</span>:<span class='fl'>9</span>,
-<span class='kw'>X</span> <span class='kw'>=</span> <span class='fu'>rnorm</span>(<span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>1</span>),
-<span class='kw'>Y</span> <span class='kw'>=</span> <span class='fu'>rnorm</span>(<span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>2</span>),
-<span class='kw'>Z</span> <span class='kw'>=</span> <span class='fu'>rnorm</span>(<span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>4</span>)
+    <pre class="examples"><div class='input'><span class='no'>stocks</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
+<span class='kw'>time</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>'2009-01-01'</span>) + <span class='fl'>0</span>:<span class='fl'>9</span>,
+<span class='kw'>X</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>1</span>),
+<span class='kw'>Y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>2</span>),
+<span class='kw'>Z</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='fl'>10</span>, <span class='fl'>0</span>, <span class='fl'>4</span>)
 )
-<span class='no'>stocksm</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='b_gather.html'>b_gather</a></span>(<span class='no'>stocks</span>,<span class='st'>'stock'</span>, <span class='st'>'price'</span>, -<span class='fl'>1</span>)
+<span class='no'>stocksm</span> <span class='kw'>&lt;-</span> <span class='fu'>b_gather</span>(<span class='no'>stocks</span>,<span class='st'>'stock'</span>, <span class='st'>'price'</span>, -<span class='fl'>1</span>)
 <span class='fu'>b_spread</span>(<span class='no'>stocksm</span>, <span class='st'>'stock'</span>, <span class='st'>'price'</span>)</div><div class='output co'>#&gt;          time            X          Y           Z
 #&gt; 1  2009-01-01 -1.400043517 -1.1073988  1.87261768
 #&gt; 2  2009-01-02  0.255317055  1.2579641  1.45180502
@@ -170,21 +172,21 @@
 #&gt; 8  2009-01-08 -0.247325302 -0.1052038 -0.06380125
 #&gt; 9  2009-01-09 -0.244199607  1.0859927 -3.30715581
 #&gt; 10 2009-01-10 -0.282705449 -1.8281497 -6.04959861</div><div class='input'><span class='co'># spread and gather are complements</span>
-<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>3</span>, <span class='fl'>4</span>), <span class='kw'>z</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>5</span>, <span class='fl'>6</span>))
+<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"a"</span>, <span class='st'>"b"</span>), <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>3</span>, <span class='fl'>4</span>), <span class='kw'>z</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>5</span>, <span class='fl'>6</span>))
 <span class='no'>sdf</span> <span class='kw'>&lt;-</span> <span class='fu'>b_spread</span>(<span class='no'>df</span>, <span class='st'>'x'</span>, <span class='st'>'y'</span>)
-<span class='fu'><a href='b_gather.html'>b_gather</a></span>(<span class='no'>sdf</span>, <span class='st'>'x'</span>, <span class='st'>'y'</span>, -<span class='fl'>1</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;   z x y
+<span class='fu'>b_gather</span>(<span class='no'>sdf</span>, <span class='st'>'x'</span>, <span class='st'>'y'</span>, -<span class='fl'>1</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt;   z x y
 #&gt; 1 5 a 3
 #&gt; 4 6 b 4</div><div class='input'>
 <span class='co'># Use 'convert = TRUE' to produce variables of mixed type</span>
-<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(<span class='kw'>row</span> <span class='kw'>=</span> <span class='fu'>rep</span>(<span class='fu'>c</span>(<span class='fl'>1</span>, <span class='fl'>51</span>), <span class='kw'>each</span> <span class='kw'>=</span> <span class='fl'>3</span>),
-                 <span class='kw'>var</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Sepal.Length"</span>, <span class='st'>"Species"</span>, <span class='st'>"Species_num"</span>),
-                 <span class='kw'>value</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>5.1</span>, <span class='st'>"setosa"</span>, <span class='fl'>1</span>, <span class='fl'>7.0</span>, <span class='st'>"versicolor"</span>, <span class='fl'>2</span>))
+<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>row</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>51</span>), <span class='kw'>each</span> <span class='kw'>=</span> <span class='fl'>3</span>),
+                 <span class='kw'>var</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Sepal.Length"</span>, <span class='st'>"Species"</span>, <span class='st'>"Species_num"</span>),
+                 <span class='kw'>value</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>5.1</span>, <span class='st'>"setosa"</span>, <span class='fl'>1</span>, <span class='fl'>7.0</span>, <span class='st'>"versicolor"</span>, <span class='fl'>2</span>))
 
-<span class='fu'>str</span>(<span class='fu'>b_spread</span>(<span class='no'>df</span>, <span class='st'>'var'</span>, <span class='st'>'value'</span>))</div><div class='output co'>#&gt; 'data.frame':	2 obs. of  4 variables:
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='fu'>b_spread</span>(<span class='no'>df</span>, <span class='st'>'var'</span>, <span class='st'>'value'</span>))</div><div class='output co'>#&gt; 'data.frame':	2 obs. of  4 variables:
 #&gt;  $ row         : num  1 51
 #&gt;  $ Sepal.Length: Factor w/ 6 levels "1","2","5.1",..: 3 4
 #&gt;  $ Species     : Factor w/ 6 levels "1","2","5.1",..: 5 6
-#&gt;  $ Species_num : Factor w/ 6 levels "1","2","5.1",..: 1 2</div><div class='input'><span class='fu'>str</span>(<span class='fu'>b_spread</span>(<span class='no'>df</span>, <span class='st'>'var'</span>, <span class='st'>'value'</span>,<span class='kw'>convert</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; 'data.frame':	2 obs. of  4 variables:
+#&gt;  $ Species_num : Factor w/ 6 levels "1","2","5.1",..: 1 2</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='fu'>b_spread</span>(<span class='no'>df</span>, <span class='st'>'var'</span>, <span class='st'>'value'</span>,<span class='kw'>convert</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; 'data.frame':	2 obs. of  4 variables:
 #&gt;  $ row         : num  1 51
 #&gt;  $ Sepal.Length: num  3 4
 #&gt;  $ Species     : chr  "setosa" "versicolor"
@@ -194,18 +196,15 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
     <h2>Author</h2>
-    
-Jonathan Sidi
-
+    <p>Jonathan Sidi</p>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -213,7 +212,7 @@ Jonathan Sidi
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
 
       </footer>
@@ -221,6 +220,8 @@ Jonathan Sidi
 
   
 
+
   </body>
 </html>
+
 
